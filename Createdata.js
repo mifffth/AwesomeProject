@@ -14,32 +14,33 @@ const Createdata = () => {
       first_name: first_name,
       last_name: last_name,
       email: email,
-      kelas: kelas,
+      class: kelas,
       gender: gender,
     };
     fetch(jsonUrl, {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
       },
-      body: JSON.stringify(data)
+      body: JSON.stringify(data),
     })
-    .then((response) => response.json())
-    .then((json) => {
-      console.log(json);
-      alert('Data tersimpan');
-      setFirstName('');
-      setLastName('');
-      setEmail('');
-      setKelas('');
-      setGender('');
-    })
-    .catch((error) => {
-      console.error('Error:', error);
-      alert('Failed to save data');
-    });
+      .then((response) => response.json())
+      .then((json) => {
+        console.log(json);
+        alert('Data tersimpan');
+        setFirstName('');
+        setLastName('');
+        setEmail('');
+        setKelas('');
+        setGender('');
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+        alert('Data gagal tersimpan');
+      });
   };
+  
 
   return (
     <SafeAreaView>
@@ -65,7 +66,7 @@ const Createdata = () => {
             onChangeText={(value) => setKelas(value)}
           />
           <TextInput
-            placeholder="Jenis Kelamin"
+            placeholder="Jenis Kelamin (Male/Female)"
             style={styles.input}
             value={gender}
             onChangeText={(value) => setGender(value)}
