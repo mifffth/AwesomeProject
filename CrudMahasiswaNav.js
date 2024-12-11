@@ -7,8 +7,8 @@ import Createdata from './Createdata';
 import DataMahasiswa from './Listdata';
 import Editdata from './Editdata';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
-import {faUser, faGraduationCap, faPenToSquare, faGithub} from '@fortawesome/free-solid-svg-icons';
-import {WebView} from 'react-native-webview';
+import {faUser, faGraduationCap, faGithub, faUserPen} from '@fortawesome/free-solid-svg-icons';
+// import {WebView} from 'react-native-webview';
 
 function HomeScreen() {
   return <Createdata />;
@@ -22,9 +22,9 @@ function EditDataMahasiswaScreen() {
   return <Editdata />;
 }
 
-function WebScreen() {
-  return <WebView source={{uri: 'https://github.com/mifffth'}} />;
-}
+// function WebScreen() {
+//   return <WebView source={{uri: 'https://github.com/mifffth'}} />;
+// }
 
 const Tab = createBottomTabNavigator();
 
@@ -33,7 +33,7 @@ export default function App() {
     <NavigationContainer>
       <Tab.Navigator>
         <Tab.Screen
-          name="Form"
+          name="Tambah Data"
           component={HomeScreen}
           options={{
             headerShown: false,
@@ -54,16 +54,16 @@ export default function App() {
         />
 
         <Tab.Screen
-          name="Edit data"
+          name="Edit Data"
           component={EditDataMahasiswaScreen}
           options={{
             tabBarIcon: ({color}) => (
-              <FontAwesomeIcon icon={faPenToSquare} color={color} size={20} />
+              <FontAwesomeIcon icon={faUserPen} color={color} size={20} />
             ),
           }}
         />
 
-        <Tab.Screen
+        {/* <Tab.Screen
           name="GitHub"
           component={WebScreen}
           options={{
@@ -72,7 +72,7 @@ export default function App() {
               <FontAwesomeIcon icon={faGithub} color={color} size={20} />
             ),
           }}
-        />
+        /> */}
       </Tab.Navigator>
     </NavigationContainer>
   );

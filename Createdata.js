@@ -60,7 +60,7 @@ const Createdata = () => {
             onChangeText={(value) => setLastName(value)}
           />
           <TextInput
-            placeholder="Kelas"
+            placeholder="Kelas (A/B)"
             style={styles.input}
             value={kelas}
             onChangeText={(value) => setKelas(value)}
